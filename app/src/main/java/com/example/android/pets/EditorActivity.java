@@ -145,8 +145,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             // Since no fields were modified, we can return early without creating a new pet.
             // No need to create ContentValues and no need to do any ContentProvider operations.
             return;
-
-            ////////
         }
 
         // Create a new map of values, where column names are the keys
