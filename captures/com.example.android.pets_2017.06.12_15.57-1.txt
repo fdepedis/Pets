@@ -1,0 +1,3 @@
+Unknown command: com.example.android.pets
+Bad activity command, or no activities match: com.example.android.pets
+Use -h for help.

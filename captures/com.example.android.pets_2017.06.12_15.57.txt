@@ -1,0 +1,60 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        c0b8da6 com.example.android.pets/.CatalogActivity filter a9921fd
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+          AutoVerify=false
+
+Registered ContentProviders:
+  com.example.android.pets/com.android.tools.fd.runtime.InstantRunContentProvider:
+    Provider{a7813e7 com.example.android.pets/com.android.tools.fd.runtime.InstantRunContentProvider}
+
+ContentProvider Authorities:
+  [com.example.android.pets.com.android.tools.fd.runtime.InstantRunContentProvider]:
+    Provider{a7813e7 com.example.android.pets/com.android.tools.fd.runtime.InstantRunContentProvider}
+      applicationInfo=ApplicationInfo{6db0b94 com.example.android.pets}
+
+Key Set Manager:
+  [com.example.android.pets]
+      Signing KeySets: 12
+
+Packages:
+  Package [com.example.android.pets] (143363d):
+    userId=10073
+    pkg=Package{452de32 com.example.android.pets}
+    codePath=/data/app/com.example.android.pets-2
+    resourcePath=/data/app/com.example.android.pets-2
+    legacyNativeLibraryDir=/data/app/com.example.android.pets-2/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=1 minSdk=15 targetSdk=25
+    versionName=1.0
+    splits=[base, lib_dependencies_apk, lib_slice_0_apk, lib_slice_1_apk, lib_slice_2_apk, lib_slice_3_apk, lib_slice_4_apk, lib_slice_5_apk, lib_slice_6_apk, lib_slice_7_apk, lib_slice_8_apk, lib_slice_9_apk]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{6db0b94 com.example.android.pets}
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privateFlags=[ RESIZEABLE_ACTIVITIES ]
+    dataDir=/data/user/0/com.example.android.pets
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2017-06-12 12:04:58
+    firstInstallTime=2017-06-09 15:56:41
+    lastUpdateTime=2017-06-12 12:05:01
+    signatures=PackageSignatures{3a80783 [7f6bfa75]}
+    installPermissionsFixed=true installStatus=1
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    User 0: ceDataInode=22272 installed=true hidden=false suspended=false stopped=true notLaunched=false enabled=0
+      runtime permissions:
+
+
+Dexopt state:
+  [com.example.android.pets]
+    Instruction Set: x86
+      path: /data/app/com.example.android.pets-2/base.apk
+      status: /data/app/com.example.android.pets-2/oat/x86/base.odex [compilation_filter=interpret-only, status=kOatUpTo
+      Date]
+
+
+Compiler stats:
+  [com.example.android.pets]
+     base.apk - 1762
