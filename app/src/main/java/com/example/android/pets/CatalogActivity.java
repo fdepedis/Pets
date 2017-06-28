@@ -75,7 +75,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         petListView.setAdapter(mCursorAdapter);
 
         getLoaderManager().initLoader(PET_LOADER_ID, null, this);
-
     }
 
     private void insertPet(){
