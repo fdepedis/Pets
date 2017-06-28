@@ -94,6 +94,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         // Receive the new content URI that will allow us to access Toto's data in the future.
         Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
 
+        // prova invio github
+
     }
 
     @Override
