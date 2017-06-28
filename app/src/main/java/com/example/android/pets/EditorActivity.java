@@ -67,11 +67,11 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        Intent makeIntent = getIntent();
+        Intent intent = getIntent();
         //String content = makeIntent.getStringExtra("content");
-        mCurrentPetUri = makeIntent.getData();
+        mCurrentPetUri = intent.getData();
 
-        Log.w("EditorActivity", mCurrentPetUri.toString());
+        //Log.w("EditorActivity", mCurrentPetUri.toString());
 
         if (mCurrentPetUri == null) {
             setTitle(getResources().getString(R.string.editor_activity_title_new_pet));
@@ -134,13 +134,31 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         String nameString = mNameEditText.getText().toString().trim();
         String breedString = mBreedEditText.getText().toString().trim();
         String weightString = mWeightEditText.getText().toString().trim();
-        int weight = Integer.parseInt(weightString);
+        //int weight = Integer.parseInt(weightString);
+
+        // Check if this is supposed to be a new pet
+        // and check if all the fields in the editor are blank
+        if (mCurrentPetUri == null &&
+            TextUtils.isEmpty(nameString) && TextUtils.isEmpty(breedString) &&
+            TextUtils.isEmpty(weightString) && mGender == PetEntry.GENDER_UNKNOWN) {
+
+            // Since no fields were modified, we can return early without creating a new pet.
+            // No need to create ContentValues and no need to do any ContentProvider operations.
+            return;
+        }
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(PetEntry.COLUMN_PET_NAME, nameString);
         values.put(PetEntry.COLUMN_PET_BREED, breedString);
         values.put(PetEntry.COLUMN_PET_GENDER, mGender);
+
+        // If the weight is not provided by the user, don't try to parse the string into an
+        // integer value. Use 0 by default.
+        int weight = mGender;
+        if (!TextUtils.isEmpty(weightString)) {
+            weight = Integer.parseInt(weightString);
+        }
         values.put(PetEntry.COLUMN_PET_WEIGHT, weight);
 
         if (mCurrentPetUri == null) {
