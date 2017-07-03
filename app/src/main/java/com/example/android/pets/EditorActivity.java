@@ -162,6 +162,9 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         });
     }
 
+    /**
+     * Perform the save of the pet in the database.
+     */
     private void savePet() {
 
         String nameString = mNameEditText.getText().toString().trim();
