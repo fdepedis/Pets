@@ -77,6 +77,9 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         getLoaderManager().initLoader(PET_LOADER_ID, null, this);
     }
 
+    /**
+     * Perform the insertion of the pet in the database.
+     */
     private void insertPet(){
 
         // Create a ContentValues object where column names are the keys,
@@ -92,6 +95,14 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         // into the pets database table.
         // Receive the new content URI that will allow us to access Toto's data in the future.
         Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
+    }
+
+    /**
+     * Helper method to delete all pets in the database.
+     */
+    private void deleteAllPets() {
+        int rowsDeleted = getContentResolver().delete(PetEntry.CONTENT_URI, null, null);
+        Log.v("CatalogActivity", rowsDeleted + " rows deleted from pet database");
     }
 
     @Override
@@ -112,7 +123,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 return true;
             // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:
-                // Do nothing for now
+                deleteAllPets();
                 return true;
         }
         return super.onOptionsItemSelected(item);
