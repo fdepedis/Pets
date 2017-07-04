@@ -255,7 +255,7 @@ public class PetProvider extends ContentProvider {
         // If 1 or more rows were updated, then notify all listeners that the data at the
         // given URI has changed
         if (rowsUpdated != 0) {
-            // Notify all listners that the datahas changed for the pet content URI
+            // Notify all listners that the data has changed for the pet content URI
             getContext().getContentResolver().notifyChange(uri, null);
         }
 
