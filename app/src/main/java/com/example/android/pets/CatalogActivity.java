@@ -32,6 +32,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
     private static final int PET_LOADER_ID = 0;
 
     PetCursorAdapter mCursorAdapter;
+    //teschio
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
